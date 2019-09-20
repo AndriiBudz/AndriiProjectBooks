@@ -12,11 +12,11 @@ public class Application {
                 Persistence.createEntityManagerFactory("demobooks");
 
         EntityManager em = factory.createEntityManager();
-        Book book = new Book(1L, "Kobzar","bla", 100L, 1900L);
-        em.getTransaction().begin();
-        em.persist(book);
-
-        em.getTransaction().commit();
+//        Book book = new Book(1L, "Kobzar","bla", 100L, 1900L);
+//        em.getTransaction().begin();
+//        em.persist(book);
+//
+//        em.getTransaction().commit();
         em.close();
         factory.close();
 

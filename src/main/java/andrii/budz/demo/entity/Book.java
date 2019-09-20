@@ -1,19 +1,29 @@
 package andrii.budz.demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.List;
+
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String info;
     private Long price;
     private Long year;
 
-    public Book() {
-    }
+    @ManyToMany
+    private List<Category> categories;
+
+
 
     public Book(Long id, String name, String info, Long price, Long year) {
         this.id = id;
